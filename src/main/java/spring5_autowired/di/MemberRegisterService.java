@@ -9,6 +9,8 @@ public class MemberRegisterService {
 	@Autowired
 	private MemberDao memberDao;
 
+	public MemberRegisterService() {}
+
 	public MemberRegisterService(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}

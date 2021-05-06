@@ -20,15 +20,25 @@ public class AppCtx {
 	}
 	
 	@Bean
-	public MemberRegisterService memberRegSvc() {
-		return new MemberRegisterService(memberDao());
-	}
-
-	@Bean
 	public ChangePasswordService changePwdSvc() {
 		ChangePasswordService pwdSvc = new ChangePasswordService();
-		pwdSvc.setMemberDao(memberDao());
+//		pwdSvc.setMemberDao(memberDao());
 		return pwdSvc;
+	}
+	
+	
+	@Bean
+	public MemberInfoPrinter memberInfoPrinter() {
+		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
+//		infoPrinter.setMemDao(memberDao());
+//		infoPrinter.setPrinter(memberPrinter());
+				
+		return infoPrinter;
+	}
+	
+	@Bean
+	public MemberRegisterService memberRegSvc() {
+		return new MemberRegisterService();
 	}
 
 	@Bean
@@ -38,18 +48,9 @@ public class AppCtx {
 
 	@Bean
 	public MemberListPrinter memberListPrinter() {
-		return new MemberListPrinter(memberDao(), memberPrinter());
+		return new MemberListPrinter();
 	}
-	
-	@Bean
-	public MemberInfoPrinter memberInfoPrinter() {
-		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-		infoPrinter.setMemDao(memberDao());
-		infoPrinter.setPrinter(memberPrinter());
-				
-		return infoPrinter;
-	}
-	
+
 	@Bean
 	public VersionPrinter versionPrinter() {
 		VersionPrinter versionPrinter = new VersionPrinter();
