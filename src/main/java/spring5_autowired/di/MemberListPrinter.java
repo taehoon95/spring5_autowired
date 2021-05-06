@@ -3,6 +3,7 @@ package spring5_autowired.di;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MemberListPrinter {
 	
@@ -27,8 +28,8 @@ public class MemberListPrinter {
 	}
 	
 	@Autowired
-	public void setPrinter(MemberPrinter printer) {
-		this.printer = printer;
+	public void setPrinter(MemberPrinter memberPrinter) {//AppCtx에서 매서드 이름과 setPrinter에서 매개변수 이름과 같아야 한다.
+		this.printer = memberPrinter;
 	}
 	
 }

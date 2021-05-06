@@ -9,4 +9,6 @@ public class MemberPrinter {
 				member.getName(),
 				member.getRegisterDateTime());
 	}
+	
+	
 }
